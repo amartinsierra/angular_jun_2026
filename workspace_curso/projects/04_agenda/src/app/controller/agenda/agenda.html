@@ -1,0 +1,18 @@
+Introduce nombre:<input type="text" [(ngModel)]="contacto.nombre" ><br><br>
+Introduce teléfono:<input type="text" [(ngModel)]="contacto.telefono" ><br><br>
+Introduce edad:<input type="text" [(ngModel)]="contacto.edad" ><br><br>
+<input type="button" value="Guardar" (click)="agregarContacto()"><br>
+
+<br>
+<input type="button" value="Mostrar" (click)="mostrarTodos()">
+<br>
+<div *ngIf="show">
+  <h2>Mi agenda</h2>
+  <table border="1">
+    <tr><th>Nombre</th><th>Teléfono</th><th>Edad</th></tr>
+    <tr *ngFor="let c of contactos">
+      <td>{{c.nombre}}</td><td>{{c.telefono}}</td><td>{{c.edad}}</td>
+    </tr>
+  </table>
+</div>
+

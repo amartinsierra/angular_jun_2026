@@ -34,6 +34,12 @@
     },
     {
       "path": "./projects/03_calculadora/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/04_agenda/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/04_agenda/tsconfig.spec.json"
     }
   ]
 }

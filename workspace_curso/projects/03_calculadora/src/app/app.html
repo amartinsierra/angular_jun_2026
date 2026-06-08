@@ -3,7 +3,34 @@
   Número 2:<input type="number" [(ngModel)]="num2"><br>
   <input type="submit" value="Sumar" (click)="sumar()">
   <input type="submit" value="Multiplicar" (click)="multiplicar()">
+  <input type="submit" value="Historico" (click)="mostrarHistorico()">
 </div>
 <div>
   <h2>{{resultado}}</h2>
 </div>
+<!--
+<div *ngIf="show">
+  <table>
+    <tr><th>Tipo operación</th><th>Operación</th><th>Resultado</th></tr>
+    <tr *ngFor="let o of historico">
+      <td>{{o.tipo}}</td>
+      <td>{{o.expresion}}</td>
+      <td>{{o.resultado}}</td>
+    </tr>
+  </table>
+</div>
+-->
+
+@if(show){
+  <table>
+    <tr><th>Tipo operación</th><th>Operación</th><th>Resultado</th></tr>
+    @for(o of historico;track o){
+      <tr>
+          <td>{{o.tipo}}</td>
+          <td>{{o.expresion}}</td>
+          <td>{{o.resultado}}</td>
+        </tr>
+    }
+
+  </table>
+}
