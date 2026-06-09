@@ -1,0 +1,79 @@
+
+<div class="container py-5">
+  <div class="card shadow-sm border-0">
+    <div class="card-header bg-primary text-white">
+      <h4 class="mb-0">Consulta de recursos por temática</h4>
+    </div>
+
+    <div class="card-body">
+
+      <div class="mb-4">
+        <label class="form-label fw-bold">
+          Seleccione temática
+        </label>
+
+        <select
+          class="form-select"
+          [(ngModel)]="tematica"
+
+          (change)="buscar()">
+
+          <option>--Temática--</option>
+
+          @for(s of tematicas; track s){
+            <option value="{{s}}">
+              {{s}}
+            </option>
+          }
+        </select>
+      </div>
+
+      @if(resultados.length > 0){
+
+        <div class="table-responsive">
+          <table class="table table-striped table-hover table-bordered align-middle">
+
+            <thead class="table-dark">
+              <tr>
+                <th>URL</th>
+                <th>Temática</th>
+                <th>Descripción</th>
+                <th>Fecha</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              @for(r of resultados; track r){
+                <tr>
+                  <td>
+                    <a
+                      [href]="r.url"
+                      target="_blank"
+                      class="text-decoration-none">
+                      {{r.url}}
+                    </a>
+                  </td>
+
+                  <td>
+                    <span class="badge bg-primary">
+                      {{r.tematica | uppercase}}
+                    </span>
+                  </td>
+
+                  <td>{{r.descripcion}}</td>
+
+                  <td>
+                    {{r.fecha | date:'dd/MM/yyyy'}}
+                  </td>
+                </tr>
+              }
+            </tbody>
+
+          </table>
+        </div>
+
+      }
+
+    </div>
+  </div>
+</div>

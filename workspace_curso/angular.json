@@ -188,6 +188,250 @@
           "builder": "@angular/build:unit-test"
         }
       }
+    },
+    "05_agenda_service": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/05_agenda_service",
+      "sourceRoot": "projects/05_agenda_service/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "projects/05_agenda_service/src/main.ts",
+            "tsConfig": "projects/05_agenda_service/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/05_agenda_service/public"
+              }
+            ],
+            "styles": ["projects/05_agenda_service/src/styles.css"]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "05_agenda_service:build:production"
+            },
+            "development": {
+              "buildTarget": "05_agenda_service:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test"
+        }
+      }
+    },
+    "06_agenda_srvice_observable": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/06_agenda_srvice_observable",
+      "sourceRoot": "projects/06_agenda_srvice_observable/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "projects/06_agenda_srvice_observable/src/main.ts",
+            "tsConfig": "projects/06_agenda_srvice_observable/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/06_agenda_srvice_observable/public"
+              }
+            ],
+            "styles": ["projects/06_agenda_srvice_observable/src/styles.css"]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "06_agenda_srvice_observable:build:production"
+            },
+            "development": {
+              "buildTarget": "06_agenda_srvice_observable:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test"
+        }
+      }
+    },
+    "a_agenda_signals": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/a_agenda_signals",
+      "sourceRoot": "projects/a_agenda_signals/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "projects/a_agenda_signals/src/main.ts",
+            "tsConfig": "projects/a_agenda_signals/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/a_agenda_signals/public"
+              }
+            ],
+            "styles": ["projects/a_agenda_signals/src/styles.css"]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "a_agenda_signals:build:production"
+            },
+            "development": {
+              "buildTarget": "a_agenda_signals:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test"
+        }
+      }
+    },
+    "07_buscador": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/07_buscador",
+      "sourceRoot": "projects/07_buscador/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "projects/07_buscador/src/main.ts",
+            "tsConfig": "projects/07_buscador/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/07_buscador/public"
+              }
+            ],
+            "styles": ["projects/07_buscador/src/styles.css"]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "07_buscador:build:production"
+            },
+            "development": {
+              "buildTarget": "07_buscador:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test"
+        }
+      }
     }
   }
 }
