@@ -64,6 +64,12 @@
     },
     {
       "path": "./projects/07_buscador/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/08_http_fake/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/08_http_fake/tsconfig.spec.json"
     }
   ]
 }
