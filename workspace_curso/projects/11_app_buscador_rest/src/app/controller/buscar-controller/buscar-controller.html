@@ -1,0 +1,23 @@
+<div class="container">
+    <h1>Búsqueda de items por tematica</h1>
+    Introduce temática:
+    <input type="text" [ngModel]="tematicaSel()" (ngModelChange)="tematicaSel.set($event)"><br><br>
+    <input type="button" value="Resultados" (click)="buscar()">
+    <br>
+      <br>
+      @if(items().length>0){
+        <table border="1">
+          <tr><th>Url</th><th>Temática</th><th>Descripción</th><th></th></tr>
+          @for(r of items();track r){
+            <tr>
+              <td>{{r.url}}</td>
+              <td>{{r.tematica}}</td>
+              <td>{{r.descripcion}}</td>
+              <td><input type="button" (click)="eliminar(r.url)" value="Eliminar"></td>
+            </tr>
+          }
+        </table>
+      }
+
+</div>
+

@@ -1,0 +1,14 @@
+<div class="container">
+    <H1>Formulario para nuevos items</H1>
+    Introduce url:<input type="text" [ngModel]="item().url" (ngModelChange)="item.update(c => ({ ...c, url: $event }))"><br>
+
+    <br>
+    Introduce temática:<input type="text" [ngModel]="item().tematica" (ngModelChange)="item.update(c => ({ ...c, tematica: $event }))"><br>
+
+    <br>
+    Introduce descripción:<input type="text"  [ngModel]="item().descripcion" (ngModelChange)="item.update(c => ({ ...c, descripcion: $event }))"><br>
+
+    <br>
+    <input type="button" (click)="guardar()" value="Guardar"><br>
+
+</div>
