@@ -1,5 +1,5 @@
 <div class="container">
-  <select class="form-control" [(ngModel)]="continente" (change)="cargarPaises($event)">
+  <select class="form-control" [(ngModel)]="continente" (change)="cargarPaises()">
     <option>-Continente-</option>
     @for(c of continentes; track c){
         <option  value="{{c}}">{{c}}</option>

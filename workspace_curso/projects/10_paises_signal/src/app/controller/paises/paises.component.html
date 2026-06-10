@@ -1,0 +1,25 @@
+<div class="container">
+  <select class="form-control" [ngModel]="continente()" (ngModelChange)="continente.set($event)"  (change)="cargarPaises()">
+    <option>-Continente-</option>
+    @for(c of continentes(); track c){
+        <option  value="{{c}}">{{c}}</option>
+    }
+
+  </select>
+  <br><br>
+  @if(paises().length>0){
+  <table class="table" border="1">
+      <tr><th>Nombre pais</th><th>Continente</th><th>Población</th><th>Bandera</th></tr>
+      @for(p of paises();track p){
+        <tr>
+            <td>{{p.name.official}}</td>
+            <td>{{p.region}}</td>
+            <td>{{p.population|number}}</td>
+            <td><img src="{{p.flags.png}}" width="30px" height="20px" loading="lazy"></td>
+        </tr>
+      }
+
+    </table>
+  }
+
+</div>

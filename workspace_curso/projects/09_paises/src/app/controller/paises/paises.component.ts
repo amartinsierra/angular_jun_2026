@@ -12,14 +12,14 @@ import { FormsModule } from '@angular/forms';
 })
 export class PaisesComponent implements OnInit{
   paises:Pais[]=[];
-  continente:string="-Continente-";
+  continente:string="- Continente -";
   continentes:string[];
   constructor(private paisesService:PaisesService){}
   ngOnInit(): void {
     this.paisesService.getContinentes().subscribe(data=>this.continentes=data);
   }
-  cargarPaises(event):void{
-    this.paisesService.getPaisesContinente(event.target.value).subscribe(data=>this.paises=data);
+  cargarPaises():void{
+    this.paisesService.getPaisesContinente(this.continente).subscribe(data=>this.paises=data);
   }
 
 }
