@@ -88,6 +88,12 @@
     },
     {
       "path": "./projects/11_app_buscador_rest/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/12_app_buscador_reactivo/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/12_app_buscador_reactivo/tsconfig.spec.json"
     }
   ]
 }

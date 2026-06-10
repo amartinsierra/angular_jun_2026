@@ -1,44 +1,46 @@
 <div class="container">
 
     <H1>Formulario para nuevos items</H1>
-    <form #form="ngForm" (ngSubmit)="guardar(form)">
+    <form [formGroup]="registroForm" (ngSubmit)="guardar()">
       Introduce url:<input type="text"
-                    #url="ngModel"
+                    formControlName="url"
                     name="url"
                     [ngModel]="item().url"
                     (ngModelChange)="item.update(c => ({ ...c, url: $event }))"
-                    required><br>
-      @if(url.invalid&&error){
-        @if(url.errors["required"]){
+                    ><br>
+      @if(registroForm.get("url").invalid&&error){
+        @if(registroForm.get("url").hasError("required")){
           <small>La URL es obligatoria</small>
         }
       }
       <br>
       Introduce temática:<input type="text"
-                        #tematica="ngModel"
+                        formControlName="tematica"
                         name="tematica"
                         [ngModel]="item().tematica"
                         (ngModelChange)="item.update(c => ({ ...c, tematica: $event }))"
-                        required><br>
-      @if(tematica.invalid&&error){
-        @if(tematica.errors["required"]){
+                       ><br>
+      @if(registroForm.get("tematica").invalid&&error){
+        @if(registroForm.get("tematica").hasError("required")){
           <small>La temática es obligatoria</small>
         }
       }
       <br>
       Introduce descripción:<input type="text"
-                            #descripcion="ngModel"
+                            formControlName="descripcion"
                             name="descripcion"
                             [ngModel]="item().descripcion"
                             (ngModelChange)="item.update(c => ({ ...c, descripcion: $event }))"
-                            required
-                            minlength="5"><br>
-      @if(descripcion.invalid&&error){
-        @if(descripcion.errors["required"]){
+                            ><br>
+      @if(registroForm.get("descripcion").invalid&&error){
+        @if(registroForm.get("descripcion").hasError("required")){
           <small>La descripción es obligatoria</small>
         }
-        @if(descripcion.errors["minlength"]){
+        @if(registroForm.get("descripcion").hasError("minlength")){
           <small>Debe tener al menos 5 caracteres</small>
+        }
+        @if(registroForm.get("descripcion").hasError("maxlength")){
+          <small>Debe tener un máximo de 10 caracteres</small>
         }
       }
       <br>

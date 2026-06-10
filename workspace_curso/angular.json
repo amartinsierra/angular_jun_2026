@@ -676,6 +676,67 @@
           "builder": "@angular/build:unit-test"
         }
       }
+    },
+    "12_app_buscador_reactivo": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/12_app_buscador_reactivo",
+      "sourceRoot": "projects/12_app_buscador_reactivo/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "projects/12_app_buscador_reactivo/src/main.ts",
+            "tsConfig": "projects/12_app_buscador_reactivo/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/12_app_buscador_reactivo/public"
+              }
+            ],
+            "styles": ["projects/12_app_buscador_reactivo/src/styles.css"]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "12_app_buscador_reactivo:build:production"
+            },
+            "development": {
+              "buildTarget": "12_app_buscador_reactivo:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test"
+        }
+      }
     }
   }
 }
