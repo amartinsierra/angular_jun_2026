@@ -1,0 +1,24 @@
+<div id="cursos" class="page">
+            <h2>Alumnos por Curso</h2>
+            <label>Seleccione un curso:</label>
+            <select id="selectCurso" (change)="mostrarAlumnos($event)">
+                <option value="">Seleccione un curso</option>
+                <option *ngFor="let c of cursos()" value="{{c}}">{{c}}</option>
+            </select>
+            @if(alumnosPorCurso()){
+              <table id="tablaAlumnos">
+                  <thead>
+                      <tr><th>Email</th><th>Nombre</th><th>Nota</th><th>Acción</th><th>Favoritos</th></tr>
+                  </thead>
+                  <tbody></tbody>
+                  <tr *ngFor="let a of alumnosPorCurso()" cambioColor="grey">
+                    <td>{{a.email}}</td>
+                    <td>{{a.nombre}}</td>
+                    <td>{{a.nota}}-{{a.nota|calificacion}}</td>
+                    <td><button (click)="borrarAlumno(a.email)">Eliminar</button></td>
+                    <td><button (click)="favoritos(a)">Favoritos</button></td>
+                  </tr>
+              </table>
+            }
+
+        </div>

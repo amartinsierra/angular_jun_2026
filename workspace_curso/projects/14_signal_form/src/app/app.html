@@ -12,24 +12,36 @@
       Password:<input type="password" [formField]="formClients.password">
     </label>
     @if(formClients.password().invalid()&&error){
-        <span >La contraseña es obligatoria.</span>
+      @if(formClients.password().errors()?.some(e => e.kind === 'required')){
+        <span>La contraseña es obligatoria.</span>
+      }
+      @if(formClients.password().errors()?.some(e => e.kind === 'minlength')){
         <span >La contraseña debe tener al menos 6 caracteres.</span>
+      }
     }
     <br>
     <label>
       Email:<input type="text" [formField]="formClients.email">
     </label>
     @if(formClients.email().invalid()&&error){
+      @if(formClients.email().errors()?.some(e => e.kind === 'required')){
         <span >El email es obligatorio.</span>
+      }
+      @if(formClients.email().errors()?.some(e => e.kind === 'email')){
         <span >Email no válido.</span>
+      }
     }
     <br>
     <label>
       Teléfono:<input type="text" [formField]="formClients.telefono">
     </label>
     @if(formClients.telefono().invalid()&&error){
+       @if(formClients.telefono().errors()?.some(e => e.kind === 'required')){
         <span >El teléfono es obligatorio.</span>
+       }
+       @if(formClients.telefono().errors()?.some(e => e.kind === 'pattern')){
         <span >Teléfono no válido.</span>
+       }
     }
     <br>
     <label>
@@ -40,8 +52,12 @@
       Instagram:<input type="text" [formField]="formClients.instagram">
     </label>
     @if(formClients.instagram().invalid()&&error){
+      @if(formClients.instagram().errors()?.some(e => e.kind === 'required')){
         <span >Tener cuenta de instagram es obligatorio para uso profesional.</span>
-        <span >Debe incluir @</span>
+      }
+      @if(formClients.instagram().errors()?.some(e => e.kind === 'invalido')){
+        <span >{{formClients.instagram().errors()?.find(e => e.kind === 'invalido').message}}</span>
+      }
     }
     <br>
 

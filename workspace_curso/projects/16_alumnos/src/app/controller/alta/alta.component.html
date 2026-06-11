@@ -1,0 +1,20 @@
+<div id="nuevo" class="page">
+            <h2>Nuevo Alumno</h2>
+
+            <form [formGroup]="registroForm"  (ngSubmit)="alta()">
+                <label>Email:<input type="email" formControlName="email"></label>
+                    <small *ngIf="registroForm.get('email').hasError('required')&&error">El email es obligatorio</small>
+                    <small *ngIf="registroForm.get('email').hasError('email')&&error">El email no es válido</small>
+                <label>Nombre:<input type="text"  formControlName="nombre"></label>
+                <label>Curso:<input type="text"   formControlName="curso"></label>
+                <small *ngIf="registroForm.get('curso').hasError('required')&&error">El curso es obligatorio</small>
+                <small *ngIf="registroForm.get('curso').hasError('invalido')&&error">El curso no puede ser avanzado</small>
+                <label>Nota:<input type="number"  formControlName="nota"></label>
+
+                    <small *ngIf="registroForm.get('nota').hasError('max')&&error">Nota demasiado alta</small>
+                    <small *ngIf="registroForm.get('nota').hasError('min')&&error">Nota demasiado baja</small>
+
+                <button type="submit">{{textoBoton}}</button>
+            </form>
+
+        </div>
