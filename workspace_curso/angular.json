@@ -737,6 +737,67 @@
           "builder": "@angular/build:unit-test"
         }
       }
+    },
+    "13_formulario_reactivo": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/13_formulario_reactivo",
+      "sourceRoot": "projects/13_formulario_reactivo/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "projects/13_formulario_reactivo/src/main.ts",
+            "tsConfig": "projects/13_formulario_reactivo/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/13_formulario_reactivo/public"
+              }
+            ],
+            "styles": ["projects/13_formulario_reactivo/src/styles.css"]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "13_formulario_reactivo:build:production"
+            },
+            "development": {
+              "buildTarget": "13_formulario_reactivo:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test"
+        }
+      }
     }
   }
 }

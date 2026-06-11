@@ -94,6 +94,12 @@
     },
     {
       "path": "./projects/12_app_buscador_reactivo/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/13_formulario_reactivo/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/13_formulario_reactivo/tsconfig.spec.json"
     }
   ]
 }

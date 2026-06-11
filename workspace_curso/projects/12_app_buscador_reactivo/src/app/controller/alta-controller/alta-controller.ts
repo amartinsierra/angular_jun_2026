@@ -3,6 +3,7 @@ import { Item } from '../../model/Item';
 import { HttpClient } from '@angular/common/http';
 import { BuscadorService } from '../../service/buscador-service';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { validadorUrl } from '../../validators/ValidarUrl';
 
 @Component({
   selector: 'app-alta-controller',
@@ -11,10 +12,10 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
   styleUrl: './alta-controller.css',
 })
 export class AltaController implements OnInit{
-  item=signal<Item>({"url":"","tematica":"","descripcion":""});
+ // item=signal<Item>({"url":"","tematica":"","descripcion":""});
   error:boolean=false;
   registroForm = new FormGroup({
-    url: new FormControl('', [Validators.required]),
+    url: new FormControl('', [Validators.required,validadorUrl]),
     tematica: new FormControl('', [Validators.required]),
     descripcion: new FormControl('', [Validators.required, Validators.minLength(5)])
   });
@@ -45,7 +46,8 @@ export class AltaController implements OnInit{
       this.error=true;
       return;
     }
-    this.buscadorService.altaItem(this.item())
+    let form:any=this.registroForm.value;
+    this.buscadorService.altaItem({"url":form.url,"tematica":form.tematica,"descripcion":form.descripcion})
     .subscribe({
       next:data=>alert("Nuevo elemento almacenado"),
       error:err=>alert("No se pudo añadir, URL repetida")
