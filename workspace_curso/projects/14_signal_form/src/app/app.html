@@ -1,0 +1,52 @@
+<div class="container">
+  <form (submit)="procesar();$event.preventDefault()" novalidate>
+    <label>
+      Usuario:<input type="text" [formField]="formClients.usuario">
+    </label>
+    <br>
+    @if(formClients.usuario().invalid()&&error){
+        <span >El nombre de usuario es obligatorio.</span>
+    }
+    <br>
+    <label>
+      Password:<input type="password" [formField]="formClients.password">
+    </label>
+    @if(formClients.password().invalid()&&error){
+        <span >La contraseña es obligatoria.</span>
+        <span >La contraseña debe tener al menos 6 caracteres.</span>
+    }
+    <br>
+    <label>
+      Email:<input type="text" [formField]="formClients.email">
+    </label>
+    @if(formClients.email().invalid()&&error){
+        <span >El email es obligatorio.</span>
+        <span >Email no válido.</span>
+    }
+    <br>
+    <label>
+      Teléfono:<input type="text" [formField]="formClients.telefono">
+    </label>
+    @if(formClients.telefono().invalid()&&error){
+        <span >El teléfono es obligatorio.</span>
+        <span >Teléfono no válido.</span>
+    }
+    <br>
+    <label>
+      Uso profesional:<input type="checkbox" [formField]="formClients.profesional">
+    </label>
+    <br>
+    <label>
+      Instagram:<input type="text" [formField]="formClients.instagram">
+    </label>
+    @if(formClients.instagram().invalid()&&error){
+        <span >Tener cuenta de instagram es obligatorio para uso profesional.</span>
+        <span >Debe incluir @</span>
+    }
+    <br>
+
+    <input type="submit" value="Registrar">
+  </form>
+
+
+</div>

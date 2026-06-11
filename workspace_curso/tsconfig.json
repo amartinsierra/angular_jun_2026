@@ -100,6 +100,18 @@
     },
     {
       "path": "./projects/13_formulario_reactivo/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/14_signal_form/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/14_signal_form/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/15_paises_material/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/15_paises_material/tsconfig.spec.json"
     }
   ]
 }
