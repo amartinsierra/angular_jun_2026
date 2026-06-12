@@ -2,6 +2,7 @@
             <h2>Nuevo Alumno</h2>
 
             <form [formGroup]="registroForm"  (ngSubmit)="alta()">
+                <label>IdAlumno:<input type="number" formControlName="idAlumno"></label>
                 <label>Email:<input type="email" formControlName="email"></label>
                     <small *ngIf="registroForm.get('email').hasError('required')&&error">El email es obligatorio</small>
                     <small *ngIf="registroForm.get('email').hasError('email')&&error">El email no es válido</small>

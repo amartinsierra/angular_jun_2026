@@ -311,67 +311,6 @@
         }
       }
     },
-    "a_agenda_signals": {
-      "projectType": "application",
-      "schematics": {},
-      "root": "projects/a_agenda_signals",
-      "sourceRoot": "projects/a_agenda_signals/src",
-      "prefix": "app",
-      "architect": {
-        "build": {
-          "builder": "@angular/build:application",
-          "options": {
-            "browser": "projects/a_agenda_signals/src/main.ts",
-            "tsConfig": "projects/a_agenda_signals/tsconfig.app.json",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "projects/a_agenda_signals/public"
-              }
-            ],
-            "styles": ["projects/a_agenda_signals/src/styles.css"]
-          },
-          "configurations": {
-            "production": {
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "4kB",
-                  "maximumError": "8kB"
-                }
-              ],
-              "outputHashing": "all"
-            },
-            "development": {
-              "optimization": false,
-              "extractLicenses": false,
-              "sourceMap": true
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "serve": {
-          "builder": "@angular/build:dev-server",
-          "configurations": {
-            "production": {
-              "buildTarget": "a_agenda_signals:build:production"
-            },
-            "development": {
-              "buildTarget": "a_agenda_signals:build:development"
-            }
-          },
-          "defaultConfiguration": "development"
-        },
-        "test": {
-          "builder": "@angular/build:unit-test"
-        }
-      }
-    },
     "07_buscador": {
       "projectType": "application",
       "schematics": {},
@@ -921,75 +860,6 @@
         }
       }
     },
-    "16_alumnos": {
-      "projectType": "application",
-      "schematics": {},
-      "root": "projects/16_alumnos",
-      "sourceRoot": "projects/16_alumnos/src",
-      "prefix": "app",
-      "architect": {
-        "build": {
-          "builder": "@angular/build:application",
-          "options": {
-            "browser": "projects/16_alumnos/src/main.ts",
-            "tsConfig": "projects/16_alumnos/tsconfig.app.json",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "projects/16_alumnos/public"
-              }
-            ],
-            "styles": ["projects/16_alumnos/src/styles.css"],
-            "server": "projects/16_alumnos/src/main.server.ts",
-            "outputMode": "server",
-            "security": {
-              "allowedHosts": []
-            },
-            "ssr": {
-              "entry": "projects/16_alumnos/src/server.ts"
-            }
-          },
-          "configurations": {
-            "production": {
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "4kB",
-                  "maximumError": "8kB"
-                }
-              ],
-              "outputHashing": "all"
-            },
-            "development": {
-              "optimization": false,
-              "extractLicenses": false,
-              "sourceMap": true
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "serve": {
-          "builder": "@angular/build:dev-server",
-          "configurations": {
-            "production": {
-              "buildTarget": "16_alumnos:build:production"
-            },
-            "development": {
-              "buildTarget": "16_alumnos:build:development"
-            }
-          },
-          "defaultConfiguration": "development"
-        },
-        "test": {
-          "builder": "@angular/build:unit-test"
-        }
-      }
-    },
     "16_proyecto_alumnos": {
       "projectType": "application",
       "schematics": {},
@@ -1042,6 +912,67 @@
             },
             "development": {
               "buildTarget": "16_proyecto_alumnos:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test"
+        }
+      }
+    },
+    "17_fake_anidation": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/17_fake_anidation",
+      "sourceRoot": "projects/17_fake_anidation/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "projects/17_fake_anidation/src/main.ts",
+            "tsConfig": "projects/17_fake_anidation/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/17_fake_anidation/public"
+              }
+            ],
+            "styles": ["projects/17_fake_anidation/src/styles.css"]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "17_fake_anidation:build:production"
+            },
+            "development": {
+              "buildTarget": "17_fake_anidation:build:development"
             }
           },
           "defaultConfiguration": "development"

@@ -54,12 +54,6 @@
       "path": "./projects/06_agenda_srvice_observable/tsconfig.spec.json"
     },
     {
-      "path": "./projects/a_agenda_signals/tsconfig.app.json"
-    },
-    {
-      "path": "./projects/a_agenda_signals/tsconfig.spec.json"
-    },
-    {
       "path": "./projects/07_buscador/tsconfig.app.json"
     },
     {
@@ -114,16 +108,16 @@
       "path": "./projects/15_paises_material/tsconfig.spec.json"
     },
     {
-      "path": "./projects/16_alumnos/tsconfig.app.json"
-    },
-    {
-      "path": "./projects/16_alumnos/tsconfig.spec.json"
-    },
-    {
       "path": "./projects/16_proyecto_alumnos/tsconfig.app.json"
     },
     {
       "path": "./projects/16_proyecto_alumnos/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/17_fake_anidation/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/17_fake_anidation/tsconfig.spec.json"
     }
   ]
 }

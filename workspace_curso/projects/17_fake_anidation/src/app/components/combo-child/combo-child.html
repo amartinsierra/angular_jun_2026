@@ -1,0 +1,6 @@
+Seleccione Post:
+  <select [ngModel]="postSeleccionado()"  (change)="seleccionPost()" (ngModelChange)="postSeleccionado.set($event)" >
+    @for(p of posts();track p){
+      <option value="{{p.id}}">{{p.title}}</option>
+    }
+  </select><br><br>

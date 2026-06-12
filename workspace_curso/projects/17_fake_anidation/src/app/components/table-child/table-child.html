@@ -1,0 +1,15 @@
+@if(comentarios().length>0){
+    <table border="1">
+      <tr><th>Post</th><th>Name</th><th>Email</th><th>Body</th></tr>
+      @for(c of comentarios();track c){
+        <tr>
+          <td>{{c.postId}}</td>
+          <td>{{c.name}}</td>
+          <td>{{c.email}}</td>
+          <td>{{c.body}}</td>
+        </tr>
+      }
+    </table>
+  }@else{
+    sin comentarios
+  }

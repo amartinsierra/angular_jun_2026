@@ -24,7 +24,7 @@ export class PaisesComponent implements OnInit,AfterViewInit{
   paises=signal<Pais[]>([]);
   continente=signal<string>("- Continente -");
   continentes=signal<string[]>([]);
-  displayedColumns: string[] = ['Pais', 'Continente', 'Población','Bandera'];
+  displayedColumns: string[] = ['Pais', 'Continente', 'Poblacion','Bandera'];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   dataSource:MatTableDataSource<Pais> = new MatTableDataSource<Pais>();

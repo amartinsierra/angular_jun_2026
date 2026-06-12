@@ -32,7 +32,10 @@ export class AlumnosCursoComponent {
   borrarAlumno(email: string): void{
       this.alumnosService.eliminarAlumno(email).subscribe({
         next: () => {
-          alert(`Se ha eliminado correctamente el alumno con el email ${email}`)
+          this.dialog.open(Dialogo,{
+            data:{mensaje:`Se ha eliminado correctamente el alumno con el email ${email}`}
+          });
+
           /*let index = this.alumnosPorCurso.indexOf(this.alumnosPorCurso.find(alumno => alumno.email === email))
           this.alumnosPorCurso.splice(index, 1)*/
           this.alumnosPorCurso.set(this.alumnosPorCurso().filter(a=>a.email!=email));

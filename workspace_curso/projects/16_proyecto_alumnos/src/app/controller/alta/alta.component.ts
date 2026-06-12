@@ -19,6 +19,7 @@ export class AltaComponent implements OnInit{
 
   error:boolean=false;
   registroForm = new FormGroup({
+    idAlumno: new FormControl(0, [Validators.required]),
     nombre: new FormControl('', [Validators.required, Validators.minLength(3)]),
     email: new FormControl('', [Validators.required, Validators.email]),
     nota: new FormControl('', [Validators.required, Validators.min(1),Validators.max(10)]),
@@ -26,9 +27,11 @@ export class AltaComponent implements OnInit{
   });
 
 
-  alumno:Alumno={"nombre":"","email":"","curso":"","nota":0};
-  constructor(private route:ActivatedRoute,private alumnosService:AlumnosService,private matDialog:MatDialog){
-      
+  alumno:Alumno={"idAlumno":0,"nombre":"","email":"","curso":"","nota":0};
+  constructor(private route:ActivatedRoute,
+    private alumnosService:AlumnosService,
+    private matDialog:MatDialog){
+
   }
   ngOnInit(): void {
     this.registroForm.get("email").valueChanges.subscribe(data=>{
@@ -42,15 +45,15 @@ export class AltaComponent implements OnInit{
     });
   }
   alta(){
-    console.log(this.registroForm.valid);
+
     if(this.registroForm.valid){
         const value=this.registroForm.value;
-        this.alumno={nombre:value.nombre,curso:value.curso,email:value.email,nota:parseFloat(value.nota)};
+        this.alumno={idAlumno:value.idAlumno,nombre:value.nombre,curso:value.curso,email:value.email,nota:parseFloat(value.nota)};
         this.alumnosService.altaAlumno(this.alumno).subscribe(
         {
           next: (data)=>this.matDialog.open(Dialogo,{data:{mensaje:"Alumno agregado"}}),
           error: error=>this.matDialog.open(Dialogo,{data:{mensaje:`${value.email} ya existe. No se añadió`}}),
-          complete: ()=>this.alumno={"nombre":"","email":"","curso":"","nota":0}
+          complete: ()=>this.alumno={"idAlumno":0,"nombre":"","email":"","curso":"","nota":0}
         }
       );
     }else{
