@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
+        .menu { background: #007BFF; padding: 15px; text-align: center; }
+        .menu a { color: white; margin: 15px; cursor: pointer; text-decoration: none; font-size: 18px; font-weight: bold; }
+        .content { margin: 20px auto; padding: 20px; max-width: 600px; background: white; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); border-radius: 8px; }
+        h2 { text-align: center; color: #333; }
+        form { display: flex; flex-direction: column; gap: 10px; }
+        label { font-weight: bold; }
+        input, select, button { padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px; }
+        button { background: #007BFF; color: white; border: none; cursor: pointer; font-weight: bold; }
+        button:hover { background: #0056b3; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { padding: 10px; border: 1px solid #ddd; text-align: center; }
+        th { background-color: #007BFF; color: white; }
+        a { color: #007BFF; cursor: pointer; text-decoration: none; }
+        a:hover { text-decoration: underline; }

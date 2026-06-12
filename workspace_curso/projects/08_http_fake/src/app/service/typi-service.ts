@@ -17,7 +17,7 @@ export class TypiService {
   }
   commentsByPost(postId:number):Observable<Comment[]>{
     //return this.http.get<Comment[]>(`${this.url}comments?postId=${postId}`);
-    return this.http.get<Comment[]>(this.url,{
+    return this.http.get<Comment[]>(`${this.url}comments`,{
       params:{postId:postId}
     });
 

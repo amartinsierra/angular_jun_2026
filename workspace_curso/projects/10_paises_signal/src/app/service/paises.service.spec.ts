@@ -28,12 +28,13 @@ describe('PaisesService', () => {
     ];
 
     const promise = firstValueFrom(service.getPaises());
-
-    const req = httpMock.expectOne(service.url); // 👈 intercepta la petición
+    //se indica que se utilizará para la llamada a la url el httpmock,
+    //que el método será GET y que el resultado será mockpaises.
+    const req = httpMock.expectOne(service.url); //  intercepta la petición
     expect(req.request.method).toBe('GET');
 
-    req.flush(mockPaises); // 👈 responde con datos falsos
-
+    req.flush(mockPaises); //  responde con datos falsos
+    //En base a lo anterior, se hace la suposición de lo que debería ser el resultado
     const resultado = await promise;
 
     expect(resultado.length).toBe(2);
@@ -54,9 +55,9 @@ describe('PaisesService', () => {
 
     const resultado = await promise;
 
-    expect(resultado.size).toBe(2);
-    expect(resultado.has('Europe')).toBe(true);
-    expect(resultado.has('Asia')).toBe(true);
+    expect(resultado.length).toBe(2);
+    expect(resultado['Europe']).toBe(true);
+    expect(resultado['Asia']).toBe(true);
   });
   it('debería obtener países por continente', async () => {
 
@@ -68,10 +69,10 @@ describe('PaisesService', () => {
 
     const promise = firstValueFrom(service.getPaisesContinente("Europe"));
 
-    const req = httpMock.expectOne(service.url); // 👈 intercepta la petición
+    const req = httpMock.expectOne(service.url); //  intercepta la petición
     expect(req.request.method).toBe('GET');
 
-    req.flush(mockPaises); // 👈 responde con datos falsos
+    req.flush(mockPaises); //  responde con datos falsos
 
     const resultado = await promise;
 

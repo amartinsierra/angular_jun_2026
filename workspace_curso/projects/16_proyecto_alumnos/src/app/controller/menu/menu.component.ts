@@ -17,7 +17,7 @@ export class MenuComponent implements OnInit{
 
   }
   ngOnInit(): void {
-    this.router.navigate(["/alta","Nuevo alumno"]);
+    this.router.navigate(["/alta"]);
   }
 
 }

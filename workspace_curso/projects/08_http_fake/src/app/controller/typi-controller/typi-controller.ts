@@ -27,7 +27,7 @@ export class TypiController implements OnInit{
     this.typiService.commentsByPost(this.postId)
     .subscribe({
       next: r=>this.comments=r,
-      error: err=>alert(err)
+      error: err=>alert()
       });
   }
 }

@@ -7,8 +7,8 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-paises',
   imports: [CommonModule,FormsModule],
-  templateUrl: './paises.component.html',
-  styleUrl: './paises.component.css'
+  templateUrl: './paises-component.html',
+  styleUrl: './paises-component.css'
 })
 export class PaisesComponent implements OnInit{
   paises=signal<Pais[]>([]);

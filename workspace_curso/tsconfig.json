@@ -118,6 +118,12 @@
     },
     {
       "path": "./projects/16_alumnos/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/16_proyecto_alumnos/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/16_proyecto_alumnos/tsconfig.spec.json"
     }
   ]
 }

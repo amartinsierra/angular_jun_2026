@@ -16,7 +16,7 @@ import { Dialogo } from '../../ui/dialogo/dialogo';
   styleUrl: './alta.component.css'
 })
 export class AltaComponent implements OnInit{
-  textoBoton:string;
+
   error:boolean=false;
   registroForm = new FormGroup({
     nombre: new FormControl('', [Validators.required, Validators.minLength(3)]),
@@ -28,7 +28,7 @@ export class AltaComponent implements OnInit{
 
   alumno:Alumno={"nombre":"","email":"","curso":"","nota":0};
   constructor(private route:ActivatedRoute,private alumnosService:AlumnosService,private matDialog:MatDialog){
-      this.textoBoton=this.route.snapshot.paramMap.get("textoBoton");
+      
   }
   ngOnInit(): void {
     this.registroForm.get("email").valueChanges.subscribe(data=>{
