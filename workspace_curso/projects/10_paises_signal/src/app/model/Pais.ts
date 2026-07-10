@@ -1,9 +1,9 @@
-import { Flag } from "./Flags";
-import { Names } from "./Names";
+import {  Flags } from "./Flags";
+
 
 export interface Pais{
-  names:Names;
+  name:string;
   region:string;
   population:string;
-  flag:Flag;
+  flags:Flags;
 }

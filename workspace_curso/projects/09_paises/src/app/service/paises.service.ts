@@ -7,7 +7,7 @@ import { Pais } from '../model/Pais';
   providedIn: 'root'
 })
 export class PaisesService {
-  url:string="https://restcountries.com/v3.1/all?fields=name,region,population,flags"
+  url:string="https://countries.dev/countries?fields=name,region,population,flags"
   constructor(private http:HttpClient) { }
   getPaises():Observable<Pais[]>{
     return this.http.get<Pais[]>(this.url);

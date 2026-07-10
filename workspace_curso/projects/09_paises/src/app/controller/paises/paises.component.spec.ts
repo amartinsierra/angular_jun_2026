@@ -55,7 +55,7 @@ describe('PaisesComponent', () => {
   //test para el funcionamiento del combo
   it('debería pintar los continentes en el select', () => {
 
-    fixture.detectChanges(); // 👈 ejecuta ngOnInit + render
+    fixture.detectChanges(); //  ejecuta ngOnInit + render
 
     const html = fixture.nativeElement;
 
@@ -73,11 +73,11 @@ describe('PaisesComponent', () => {
     const html = fixture.nativeElement;
     const select = html.querySelector('select');
 
-    // 👇 simulamos selección
+    // simulamos selección
     select.value = 'Europe';
     select.dispatchEvent(new Event('change'));
 
-    // 👇 Angular procesa evento
+    // Angular procesa evento
     fixture.detectChanges();
 
     expect(component.paises().length).toBe(1);
@@ -87,7 +87,7 @@ describe('PaisesComponent', () => {
 
     fixture.detectChanges();
 
-    // 👇 cargamos datos manualmente
+    //  cargamos datos manualmente
     component.paises.set([
       { name: { common: 'España', official:"España" }, region: 'Europe', population: "47000000", flags: {png:"",alt:""} }
     ]);

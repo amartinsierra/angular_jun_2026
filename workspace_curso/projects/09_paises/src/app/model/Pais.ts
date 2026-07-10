@@ -1,8 +1,8 @@
 import { Flags } from "./Flags";
-import { Names } from "./Names";
+
 
 export interface Pais{
-  name:Names;
+  name:string;
   region:string;
   population:string;
   flags:Flags;

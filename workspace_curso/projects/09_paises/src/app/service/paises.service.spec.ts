@@ -29,10 +29,10 @@ describe('PaisesService', () => {
 
     const promise = firstValueFrom(service.getPaises());
 
-    const req = httpMock.expectOne(service.url); // 👈 intercepta la petición
+    const req = httpMock.expectOne(service.url); //  intercepta la petición
     expect(req.request.method).toBe('GET');
 
-    req.flush(mockPaises); // 👈 responde con datos falsos
+    req.flush(mockPaises); //  responde con datos falsos
 
     const resultado = await promise;
 
@@ -54,9 +54,9 @@ describe('PaisesService', () => {
 
     const resultado = await promise;
 
-    expect(resultado.size).toBe(2);
-    expect(resultado.has('Europe')).toBe(true);
-    expect(resultado.has('Asia')).toBe(true);
+    expect(resultado.length).toBe(2);
+    expect(resultado.some(n=>'Europe')).toBe(true);
+    expect(resultado.some(n=>'Asia')).toBe(true);
   });
   it('debería obtener países por continente', async () => {
 
@@ -68,10 +68,10 @@ describe('PaisesService', () => {
 
     const promise = firstValueFrom(service.getPaisesContinente("Europe"));
 
-    const req = httpMock.expectOne(service.url); // 👈 intercepta la petición
+    const req = httpMock.expectOne(service.url); //  intercepta la petición
     expect(req.request.method).toBe('GET');
 
-    req.flush(mockPaises); // 👈 responde con datos falsos
+    req.flush(mockPaises); //  responde con datos falsos
 
     const resultado = await promise;
 

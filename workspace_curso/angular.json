@@ -981,6 +981,32 @@
           "builder": "@angular/build:unit-test"
         }
       }
+    },
+    "ui-compartido": {
+      "projectType": "library",
+      "root": "projects/ui-compartido",
+      "sourceRoot": "projects/ui-compartido/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ui-compartido/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ui-compartido/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "projects/ui-compartido/tsconfig.spec.json"
+          }
+        }
+      }
     }
   }
 }

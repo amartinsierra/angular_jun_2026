@@ -11,7 +11,7 @@
     <tr><th>Nombre pais</th><th>Continente</th><th>Población</th><th>Bandera</th></tr>
     @for(p of paises;track p){
       <tr>
-          <td>{{p.name.official}}</td>
+          <td>{{p.name}}</td>
           <td>{{p.region}}</td>
           <td>{{p.population|number}}</td>
           <td><img src="{{p.flags.png}}" width="30px" height="20px" loading="lazy"></td>

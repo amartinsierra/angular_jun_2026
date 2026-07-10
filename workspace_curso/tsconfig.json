@@ -13,7 +13,12 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "ES2022",
-    "module": "preserve"
+    "module": "preserve",
+    "paths": {
+      "ui-compartido": [
+        "./dist/ui-compartido"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
@@ -118,6 +123,12 @@
     },
     {
       "path": "./projects/17_fake_anidation/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/ui-compartido/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/ui-compartido/tsconfig.spec.json"
     }
   ]
 }

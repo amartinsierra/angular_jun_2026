@@ -11,7 +11,7 @@
         @if(registroForm.get("url").hasError("required")){
           <small>La URL es obligatoria</small>
         }
-        @if(registroForm.get("url").hasError("invalido")){
+        @if(registroForm.get("url").hasError("mensaje")){
           <small>{{registroForm.get("url").errors["mensaje"]}}</small>
         }
       }
@@ -30,7 +30,7 @@
       Introduce descripción:<input type="text"
                             formControlName="descripcion"
                             name="descripcion"
-                        
+
                             ><br>
       @if(registroForm.get("descripcion").invalid&&error){
         @if(registroForm.get("descripcion").hasError("required")){

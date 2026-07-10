@@ -1,3 +1,4 @@
-export interface Flag{
-  url_png:string;
+export interface Flags{
+  svg:string;
+  alt:string;
 }

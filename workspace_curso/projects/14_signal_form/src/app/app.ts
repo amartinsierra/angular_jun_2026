@@ -38,6 +38,8 @@ export class App {
 
     required(p.instagram, {
       when: ({ valueOf }) => valueOf(p.profesional)
+      //si hubiera importado valueOf, lo anterior sería equivalente a:
+      //when: ()=>valueOf(p.profesional)
     });
 
     validate(p.instagram, ({ value, valueOf }) => {

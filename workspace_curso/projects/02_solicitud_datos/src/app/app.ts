@@ -15,5 +15,6 @@ export class App {
   resultado:string;
   mostrar():void{
     this.resultado=`Te llamas ${this.nombre} y tiene ${this.edad} años`;
+    
   }
 }
